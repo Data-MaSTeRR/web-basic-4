@@ -34,4 +34,11 @@ firstParagraph.appendChild(newAnchorElement);
 // js에서 DOM으로 요소 이동하기 -> 부모인 body의 맨 마지막에 append
 firstParagraph.parentElement.appendChild(firstParagraph);
 
+// innerHTML -> text만 출력하는 textContent와 달리 모든 html 요소 포함
+// I'm new!This leads to Naver!
+// I'm new!<a href="https://naver.com">This leads to Naver!</a>
+console.log(firstParagraph.textContent);
+console.log(firstParagraph.innerHTML);
 
+// firstParagraph.textContent = "I'm new!<strong>This leads to Naver!</strong>"; 오류
+firstParagraph.innerHTML = "I'm new!<strong>This leads to Naver!</strong>";
