@@ -30,3 +30,8 @@ firstParagraph.appendChild(newAnchorElement);
  let firstH1Element = document.querySelector('h1');
  firstH1Element.remove();
  // firstH1Element.parentElement.removeChild(firstH1Element); 구 방식
+
+// js에서 DOM으로 요소 이동하기 -> 부모인 body의 맨 마지막에 append
+firstParagraph.parentElement.appendChild(firstParagraph);
+
+
