@@ -25,3 +25,8 @@ let firstParagraph = document.querySelector('p');
 
 // 3. 부모 요소에 요소 삽입
 firstParagraph.appendChild(newAnchorElement);
+
+// js에서 DOM으로 요소 제거하기
+ let firstH1Element = document.querySelector('h1');
+ firstH1Element.remove();
+ // firstH1Element.parentElement.removeChild(firstH1Element); 구 방식
