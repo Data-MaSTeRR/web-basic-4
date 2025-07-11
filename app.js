@@ -9,9 +9,12 @@ function changeParagraphText() {
     console.log("paragraph clicked!");
 }
 
-function retrieveUserInput() {
-    let enteredText = inputElement.value; // value는 input 박스의 삽입된 값 가져옴
+function retrieveUserInput(event) {
+    // let enteredText = inputElement.value; // value는 input 박스의 삽입된 값 가져옴
+    let enteredText = event.target.value; // 위와 동일한 기능
+    // let enteredText = event.data; => 문자 하나씩만 출력
     console.log(enteredText);
+    console.log(event); // event는 브라우저에서 제공하는 기본 객체
 }
 
 // 이벤트 리스너 | type: 조건, listener: 액션(함수 실행)
