@@ -17,9 +17,13 @@ function updateRemainingCharacters(event) {
 
     remainingCharsElement.textContent = remainingCharacters; // 요소값 동적으로 바꾸기
 
+    // warning class를 통한 DOM 효과 조작
     if (remainingCharacters <= 10) {
         remainingCharsElement.classList.add('warning'); // span에 class 추가
         productNameInputElement.classList.add('warning'); // input에 class 추가
+    } else if (remainingCharacters > 10) {
+        remainingCharsElement.classList.remove('warning'); // span에 class 제거
+        productNameInputElement.classList.remove('warning'); // input에 class 제거
     }
 }
 
