@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
-
+    <section id="statistics">
+        <h2>Statistics</h2>
+        <p>Test your luck and find out how many dice rolls (1-6 dice) it takes you to roll a certain number (between 1 and
+            6).</p>
+        <div class="control">
+            <label for="user-target-number">Your Target Number</label>
+            <input type="number" min="1" max="6" id="user-target-number">
+        </div>
+        <button>Roll the Dice</button>
+        <ul id="dice-rolls"></ul>
+        <p>It took you <span id="output-total-rolls" class="output">X</span>
+            rolls to roll a
+            <span id="output-target-number" class="output">Y</span>
+            .</p>
+    </section>
 </body>
+
 </html>
