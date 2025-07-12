@@ -265,3 +265,127 @@ productNameInputElement.addEventListener('input', updateRemainingCharacters);
 
 * HTML에서 정의된 속성을 JS로 가져와 기준으로 사용하면 UI와 로직이 일관된다
 * 예) HTML에서 `maxlength="50"`으로 지정 → JS에서 `const maxAllowedChars = input.maxLength`로 받아 사용
+
+# 🔁 JavaScript 반복문 정리
+
+JavaScript에서 코드를 여러 번 실행하거나 컬렉션을 순회하기 위해 사용하는 반복문들을 정리했습니다. 각각의 특징과 사용법, 주의사항을 함께 담았습니다.
+
+---
+
+## 📌 기본 반복문
+
+### 📝 `for`
+
+가장 전통적인 반복문으로, 반복 횟수를 명확히 알고 있을 때 유용합니다.
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
+
+✅ 초기화, 조건식, 증감식으로 구성
+✅ 배열 인덱스 기반 순회에 적합
+
+---
+
+### 📝 `while`
+
+조건이 `true`인 동안 계속 실행됩니다. 반복 횟수를 알 수 없을 때 유용합니다.
+
+```js
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
+
+✅ 조건을 만족하지 않으면 한 번도 실행되지 않을 수 있음
+
+---
+
+### 📝 `do...while`
+
+`while`과 유사하지만, **조건을 나중에 평가**하므로 최소 1회는 실행됩니다.
+
+```js
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+```
+
+✅ 무조건 한 번은 실행하고 싶을 때 사용
+
+---
+
+## 📌 컬렉션 순회용 반복문
+
+### 📝 `for...of`
+
+배열, 문자열, `Map`, `Set` 등의 **이터러블 객체**를 순회할 때 사용합니다.
+
+```js
+const arr = [10, 20, 30];
+for (const value of arr) {
+  console.log(value);
+}
+```
+
+✅ 값(value)에 바로 접근
+✅ 인덱스가 필요하면 `entries()` 또는 `for` 사용
+
+---
+
+### 📝 `for...in`
+
+객체의 \*\*열거 가능한 속성(key)\*\*을 순회합니다.
+
+```js
+const obj = { a: 1, b: 2 };
+for (const key in obj) {
+  console.log(key, obj[key]);
+}
+```
+
+⚠️ 배열에는 적합하지 않음 (순서 보장 X, 프로토타입 체인도 탐색)
+
+---
+
+## 📌 고차 함수 기반 반복
+
+### 📝 `forEach`
+
+배열의 각 요소에 대해 콜백 함수를 실행합니다.
+
+```js
+[1, 2, 3].forEach((value, index) => {
+  console.log(index, value);
+});
+```
+
+✅ 간단하고 가독성 좋음
+❌ `break`/`continue` 불가 → 필요한 경우 `for` 사용
+
+---
+
+## 🔎 언제 무엇을 쓸까?
+
+| 상황          | 추천 반복문                |
+| ----------- | --------------------- |
+| 인덱스로 배열을 순회 | `for`                 |
+| 값만 순회       | `for...of`, `forEach` |
+| 객체의 키/값 순회  | `for...in`            |
+| 조건 기반 반복    | `while`, `do...while` |
+
+---
+
+## 🚀 요약
+
+✅ 반복 횟수를 알면 → `for`
+✅ 값 중심 순회 → `for...of`
+✅ 키 중심 순회 → `for...in`
+✅ 반드시 한 번 실행 → `do...while`
+✅ 배열 전용, 가독성 ↑ → `forEach`
