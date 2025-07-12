@@ -32,7 +32,12 @@ function rollDiceAlgorithm() {
         diceRollListElement.appendChild(newRollListElement);
     }
 
+    // 주사위 총 몇번 던짐? 목표 주사위 숫자는?
+    const totalCountRollDice = document.querySelector('#output-total-rolls');
+    const targetNumberRollDice = document.querySelector('#output-target-number');
 
+    totalCountRollDice.textContent = countRollDice;
+    targetNumberRollDice.textContent = inputValue;
 }
 
 rollDiceButtonElement.addEventListener('click', () => rollDiceAlgorithm());
