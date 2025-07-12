@@ -59,7 +59,7 @@ button:hover {
     color: rgb(105, 101, 75);
 }
 
-/* js에서 DOM으로 classList.add(warning) 추가 시 발동*/
+/* js에서 DOM으로 classList.add(warning, error) 추가 시 발동*/
 
 input.warning {
     background-color: rgb(248, 191, 145);
@@ -67,4 +67,12 @@ input.warning {
 
 #remaining-chars.warning {
     color:rgb(211, 109, 26);
+}
+
+input.error {
+    background-color: rgb(248, 157, 145);
+}
+
+#remaining-chars.error {
+    color:rgb(211, 54, 26);
 }

@@ -21,9 +21,17 @@ function updateRemainingCharacters(event) {
     if (remainingCharacters <= 10) {
         remainingCharsElement.classList.add('warning'); // span에 class 추가
         productNameInputElement.classList.add('warning'); // input에 class 추가
-    } else if (remainingCharacters > 10) {
+    } else {
         remainingCharsElement.classList.remove('warning'); // span에 class 제거
         productNameInputElement.classList.remove('warning'); // input에 class 제거
+    }
+
+    if (remainingCharacters === 0) {
+        remainingCharsElement.classList.add('error');
+        productNameInputElement.classList.add('error');
+    } else {
+        remainingCharsElement.classList.remove('error');
+        productNameInputElement.classList.remove('error');
     }
 }
 
