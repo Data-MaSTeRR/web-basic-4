@@ -16,6 +16,11 @@ function updateRemainingCharacters(event) {
     const remainingCharacters = maxAllowedChars - enteredTextLength;
 
     remainingCharsElement.textContent = remainingCharacters; // 요소값 동적으로 바꾸기
+
+    if (remainingCharacters <= 10) {
+        remainingCharsElement.classList.add('warning'); // span에 class 추가
+        productNameInputElement.classList.add('warning'); // input에 class 추가
+    }
 }
 
 // 이벤트 리스너
